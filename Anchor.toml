@@ -1,0 +1,29 @@
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+# [workspace]
+# members = [
+#     "programs/zod"
+# ]
+
+[scripts]
+test = "ts-mocha -p ./tsconfig.json -t 1000000"
+kill-validator = "lsof -i tcp:8899 | awk 'NR>1 {print $2}' | uniq | xargs kill"
+build-client = "cd ./deps/client/ && npm install && npm run build && cd ../.."
+check-idl = "ts-node scripts/check-idl.ts"
+sync-idl = "rm -Rf ./deps/client/src/types && cp -R ./target/types ./deps/client/src"
+
+[test]
+startup_wait = 10000
+
+# [[test.genesis]]
+# address = "Zo1ThtSHMh9tZGECwBDL81WJRL6s3QTHf733Tyko7KQ"
+# program = "./target/deploy/zo.so"
+
+# [programs.devnet]
+# zod = "HjBqgYKdav882K1bbnoaSr3QmZ9mxQcpmAFrvrAKjrpL"
+
+# [[test.genesis]]
+# address = "HjBqgYKdav882K1bbnoaSr3QmZ9mxQcpmAFrvrAKjrpL"
+# program = "./target/deploy/zod.so"

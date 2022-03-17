@@ -1,0 +1,6 @@
+[submodule "deps/zo-abi"]
+	path = deps/zo-abi
+	url = git@github.com:01protocol/zo-abi.git
+[submodule "deps/zo-client"]
+	path = deps/zo-client
+	url = git@github.com:01protocol/zo-client.git

@@ -1,0 +1,21 @@
+[package]
+name = "common"
+version = "0.1.0"
+edition = "2018"
+
+[features]
+dummy-data = []
+default = ["dummy-data"]
+
+[dependencies]
+thiserror = "1.0.21"
+anchor-lang = "0.20.1"
+anchor-spl = "0.20.1"
+spl-token = { version = "3.2.0", features = ["no-entrypoint"] }
+borsh = "0.9.1"
+uint = { version = "=0.9.1", default-features = false }
+pyth-client = "0.2.2"
+switchboard-program = "=0.2.0"
+az = "1.1.2"
+num-traits = "0.2.14"
+fixed = { version = "=1.9.0", features = ["num-traits"] }

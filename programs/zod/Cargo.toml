@@ -1,0 +1,27 @@
+[package]
+name = "zod"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib","lib"]
+name = "zod"
+
+[features]
+devnet = []
+
+[dependencies]
+common = { path = "../../common" }
+zo = {package = "zo-abi", path = "../../deps/zo-abi", features = ["cpi", "common", "devnet"]}
+anchor-lang = "0.20.1"
+anchor-spl = { version = "0.20.1", features = ["dex"] }
+fixed = "=1.9.0"
+fixed-macro = "1.1.1"
+borsh = { version = "0.9", features = ["const-generics"] }
+pyth-client = "0.2.2"
+switchboard-program = "=0.2.0"
+lazy_static = "1.4.0"
+num-traits = "0.2.14"
+az = "1.1.2"
+
